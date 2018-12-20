@@ -1,0 +1,95 @@
+[type="range"] {
+  -webkit-appearance: none;
+  margin: $thumb-height / 2 0;
+  width: $track-width;
+
+  @include desktop {
+    margin: $thumb-height-desktop / 2 0;
+  }
+
+  &:focus {
+    outline: 0;
+
+    &::-webkit-slider-runnable-track {
+      background: lighten($track-color, $contrast);
+    }
+
+    &::-ms-fill-lower {
+      background: $track-color;
+    }
+
+    &::-ms-fill-upper {
+      background: lighten($track-color, $contrast);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+  }
+  &::-webkit-slider-thumb {
+    @include thumb;
+    -webkit-appearance: none;
+    margin-top: ((-$track-border-width * 2 + $track-height) / 2) -
+      ($thumb-height / 2);
+    @include desktop {
+      margin-top: ((-$track-border-width * 2 + $track-height-desktop) / 2) -
+        ($thumb-height-desktop / 2);
+    }
+  }
+  &::-moz-range-track {
+    @include track;
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+  }
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+  &::-ms-track {
+    @include track;
+    background: transparent;
+    border-color: transparent;
+    border-width: ($thumb-height / 2) 0;
+    color: transparent;
+    @include desktop {
+      border-width: ($thumb-height-desktop / 2) 0;
+    }
+  }
+  &::-ms-fill-lower {
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    background: darken($track-color, $contrast);
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+  }
+  &::-ms-fill-upper {
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+  }
+  &::-ms-thumb {
+    @include thumb;
+    margin-top: 0;
+  }
+}

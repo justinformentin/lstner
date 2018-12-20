@@ -1,0 +1,119 @@
+@import "./modals/auth-modal";
+@import "./modals/episode-modal";
+@import "./modals/search-modal";
+@import "./modals/upnext-popup";
+@import "./modals/warning-modals";
+
+// General styles for lists and items
+.modal__header {
+  position: relative;
+}
+
+.modal__title {
+  font-size: 2.2rem;
+  padding-right: $large-space;
+
+  @include desktop {
+    font-size: 2.5rem;
+  }
+}
+
+.modal__close {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: $close-icon-svg;
+}
+
+.modal__list {
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+.modal__item {
+  display: flex;
+  overflow: hidden;
+  height: 6rem;
+  margin: 0 $small-space $small-space $small-space;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.up-next__popup .modal__item:hover .modal-item__play-icon,
+.up-next__popup .modal__item:hover .modal__remove {
+  @include laptop {
+    opacity: 1;
+  }
+}
+
+.up-next__popup .modal__item:hover .modal-item__info {
+  @include laptop {
+    margin-right: $space;
+  }
+}
+
+.up-next__popup .modal-item__info {
+  margin-right: $space;
+
+  @include laptop {
+    margin-right: 0;
+  }
+}
+
+.modal-item__artwork {
+  flex-shrink: 0;
+  width: 6rem;
+  height: 6rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-item__play-icon {
+  width: 5rem;
+  height: 5rem;
+  padding: $small-space;
+  opacity: 0.3;
+  fill: darken($white, 0.5);
+}
+
+.modal-item__info {
+  flex: 0 1 auto;
+  overflow: hidden;
+  min-width: 0;
+  padding: $small-space; //https://stackoverflow.com/questions/45813304/text-overflow-ellipsis-on-flex-child-not-working
+}
+
+.modal-item__title,
+.modal-item__author {
+  @include text-overflow;
+}
+
+.modal-item__title {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.modal-item__author {
+  font-style: italic;
+}
+
+.modal__remove {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: $small-space;
+  right: $small-space;
+  opacity: 1;
+
+  background-image: $close-icon-svg;
+
+  @include laptop {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-width: 28rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+.app {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body {
+  background: $body-background-color;
+  color: $body-default-color;
+  font-family: $body-default-font-family;
+  font-size: $base-font-size;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  background: none;
+}
+
+button:disabled {
+  opacity: 0.3;
+}
+
+a {
+  color: $body-default-color;
+  text-decoration: none;
+}

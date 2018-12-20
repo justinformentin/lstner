@@ -1,0 +1,10 @@
+type SearchPreview @cacheControl(maxAge: 3600) {
+  podcastId: Int!
+  title: String!
+  author: String!
+  artworkUrl: String!
+}
+
+extend type Query {
+  searchPreviews(searchTerm: String!): [SearchPreview]
+}

@@ -1,0 +1,17 @@
+type Podcast @cacheControl(maxAge: 3600) {
+  podcastId: Int!
+  feedUrl: String
+  title: String
+  author: String
+  website: String
+  description: String
+  summary: String
+  artworkUrl: String
+  subscribed: Boolean @cacheControl(maxAge: 0)
+  updatedAt: String
+  episodes: [Episode]
+}
+
+extend type Query {
+  podcast(podcastId: Int!): Podcast
+}

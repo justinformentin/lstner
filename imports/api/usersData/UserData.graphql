@@ -1,0 +1,48 @@
+type UserData {
+  _id: String!
+  podcasts: [Podcast]
+  playingEpisode: Episode
+  newReleases: [Episode]
+  inProgress: [Episode]
+  upnext: [Episode]
+  favorites: [Episode]
+  played: [Episode]
+}
+
+extend type Query {
+  podcasts: [Podcast]
+  playingEpisode: Episode
+  newReleases: [Episode]
+  upnext: [Episode]
+  inProgress: [Episode]
+  favorites: [Episode]
+  played: [Episode]
+}
+
+type EpisodeIds {
+  podcastId: Int!
+  id: String!
+}
+
+type Mutation {
+  subscribe(podcastId: Int!): Podcast
+  unsubscribe(podcastId: Int!): Podcast
+
+  setPlayingEpisode(id: String!, podcastId: Int!): Episode
+  clearPlayingEpisode: EpisodeIds
+
+  addToUpnext(id: String!, podcastId: Int!): Episode
+  removeFromUpnext(id: String!, podcastId: Int!): Episode
+
+  addToFavorites(id: String!, podcastId: Int!): Episode
+  removeFromFavorites(id: String!, podcastId: Int!): Episode
+
+  markAsPlayed(id: String!, podcastId: Int!): Episode
+  markAsUnplayed(id: String!, podcastId: Int!): Episode
+
+  updatePlayedSeconds(
+    id: String!
+    podcastId: Int!
+    playedSeconds: Float!
+  ): Episode
+}

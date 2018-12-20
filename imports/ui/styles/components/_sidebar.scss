@@ -1,0 +1,57 @@
+.sidebar__logo {
+  display: flex;
+  border-bottom: solid 2px #41476d;
+
+  @include laptop {
+    display: flex;
+  }
+
+  @include desktop {
+    display: flex;
+  }
+
+  & img {
+    width: 100px;
+    height: 70px;
+
+  }
+}
+
+.sidebar-text__logo {
+  font-family: 'Baloo';
+  font-weight: 600;
+  color: #dce4f2;
+  font-size: 3rem;
+  margin: auto 0;
+}
+
+.sidebar__links {
+  padding-top: 1rem;
+}
+
+.sidebar__link {
+  display: block;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: $sidebar-font-size;
+  line-height: $sidebar-font-size;
+  padding: $small-space 0 $small-space $large-space;
+  text-align: left;
+
+  @include desktop {
+    font-size: $sidebar-font-size * 1.2;
+    line-height: $sidebar-font-size * 1.2;
+  }
+
+  @include text-overflow;
+}
+
+.sidebar__link--selected,
+.sidebar__link:hover {
+  color: $sidebar-color-active;
+}
+
+.auth {
+  margin-top: $large-space;
+}

@@ -1,0 +1,39 @@
+.search-modal {
+  @include modal;
+  padding: $small-space;
+  top: calc(#{$header-height} + #{$space});
+
+  height: 35rem;
+  width: 100%;
+  @include phone-large {
+    right: 0;
+    width: 42rem;
+  }
+
+  @include tablet {
+    right: $large-space;
+    width: 45rem;
+  }
+  @include laptop {
+    top: $space;
+  }
+  @include desktop {
+    right: calc(
+      (#{$site-width} - #{$page-content-sidebar-width} - #{$main-width}) / 2
+    );
+  }
+}
+.search-modal__overlay {
+  @include overlay($modal-overlay-background);
+}
+
+.search-modal__input {
+  color: $black;
+  width: 100%;
+  padding: 0.5rem $space;
+  margin-bottom: $small-space;
+  border-radius: 1rem;
+  border: 0.1rem solid rgba($black, 0.4);
+  outline: none;
+  font-size: 1.8rem;
+}

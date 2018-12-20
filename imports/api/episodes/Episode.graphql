@@ -1,0 +1,22 @@
+type Episode {
+  id: String!
+  podcastId: Int!
+  podcastArtworkUrl: String!
+  title: String!
+  description: String
+  author: String
+  mediaUrl: String
+  duration: Float
+  pubDate: String
+  pubDateUnix: Float
+  linkToEpisode: String
+  playedSeconds: Float @cacheControl(maxAge: 0)
+  inFavorites: Boolean @cacheControl(maxAge: 0)
+  inUpnext: Boolean @cacheControl(maxAge: 0)
+  isPlayed: Boolean @cacheControl(maxAge: 0)
+}
+
+extend type Query {
+  feed(podcastId: Int!, limit: Int!): [Episode]
+  episode(id: String!, podcastId: Int!): Episode
+}

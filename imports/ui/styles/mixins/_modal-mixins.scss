@@ -1,0 +1,33 @@
+@mixin overlay($background) {
+  position: fixed;
+  z-index: 300;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $background;
+}
+
+@mixin modal {
+  position: fixed;
+  z-index: 301;
+  border-radius: 0.5rem;
+  outline: none;
+  background: $modal-background;
+  display: flex;
+  flex-direction: column;
+
+  animation: appearance 0.5s ease;
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}

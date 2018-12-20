@@ -1,0 +1,63 @@
+.button {
+  display: inline-block;
+  background: $button-bg;
+  color: $button-color;
+  cursor: pointer;
+  font-size: $base-font-size;
+  line-height: 1.2;
+  padding: $small-space;
+  text-transform: uppercase;
+  border-radius: 10rem;
+  transition: all 0.3s ease;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button--load {
+  display: block;
+  margin: 0 auto;
+}
+
+.button--danger {
+  background: $light-red;
+  color: $white;
+  border-color: $light-red;
+}
+
+.button:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 $button-spacing (2 * $button-spacing) $button-shadow-color;
+}
+
+.button:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 (0.5 * $button-spacing) $button-spacing $button-shadow-color;
+}
+
+.subscribe-btn {
+  @extend .button;
+  width: 12rem;
+  border: 0.2rem solid $medium-blue;
+  font-weight: 900;
+  &::after {
+    content: "Subscribe";
+  }
+}
+ 
+.subscribe-btn--subscribed {
+  background: $button-color;
+  color: $medium-blue;
+
+  &::after {
+    content: "Subscribed";
+  }
+
+  &:hover {
+    background: $light-red;
+    color: $white;
+    border-color: $light-red;
+
+    &::after {
+      content: "UNSUBSCRIBE";
+    }
+  }
+}

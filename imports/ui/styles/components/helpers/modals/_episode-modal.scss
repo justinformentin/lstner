@@ -1,0 +1,61 @@
+.episode-modal {
+  @include modal;
+  padding: $small-space;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 35rem;
+  width: 100%;
+
+  @include phone-large {
+    height: 40rem;
+    width: 42rem;
+  }
+
+  @include tablet {
+    height: 50rem;
+    width: 60rem;
+  }
+}
+
+.episode-modal__overlay {
+  @include overlay($modal-overlay-background);
+}
+
+.episode-modal__author {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-bottom: $space;
+
+  @include desktop {
+    font-size: 1.6rem;
+  }
+}
+
+.episode__details {
+  overflow-y: auto;
+
+  @include desktop {
+    font-size: 1.6rem;
+  }
+}
+
+.episode-modal__link-to-episode,
+.episode-modal__description a {
+  text-decoration: underline;
+  color: $light-blue;
+}
+
+.episode-modal__description {
+  margin-top: $space;
+}
+
+.episode-modal__description p {
+  margin-bottom: $small-space;
+}
+
+.episode-modal__description img {
+  width: 100%;
+}

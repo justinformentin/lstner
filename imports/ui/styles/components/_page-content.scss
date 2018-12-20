@@ -1,0 +1,226 @@
+.page-content {
+  display: flex;
+  flex-direction: row;
+  width: $site-width;
+  height: 100vh;
+}
+
+.page-content__sidebar {
+  position: fixed;
+  z-index: 301;
+  top: $header-height;
+  bottom: 0;
+  left: -$page-content-sidebar-width;
+  display: flex;
+  overflow-y: auto;
+  flex-shrink: 0;
+  width: $page-content-sidebar-width;
+  transition: left 0.3s ease;
+  color: $sidebar-color;
+  background: rgb(3,1,36);
+  background: $sidebar-gradient;
+  @include laptop {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: block;
+    width: $page-content-sidebar-width;
+    height: 100vh;
+  }
+  @include desktop {
+    width: $page-content-sidebar-width-desktop;
+  }
+}
+
+.top-header {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: $header-height;
+  background: $dark-blue;
+  @include laptop {
+    display: none;
+  }
+}
+
+.top-header__logo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+  @include tablet {
+    width: 20rem;
+  }
+}
+
+.top-header__nav-toogle {
+  position: absolute;
+  top: $small-space;
+  left: $space;
+  cursor: pointer;
+  svg {
+    width: $header-nav-toogle;
+    height: $header-nav-toogle;
+  }
+}
+
+.top-header__image {
+  height: 70px;
+}
+
+.top-header__text {
+  color: #dce4f2;
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Baloo';
+}
+.page-content__main {
+  position: relative;
+  top: $header-height;
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(#{100vh} - #{$header-height});
+  @include tablet {
+    padding: $space $space 0 $space;
+  }
+  @include laptop {
+    top: 0;
+    width: $page-content-main-width;
+    height: 100vh;
+  }
+  @include desktop {
+    width: $page-content-main-width-desktop;
+  }
+}
+
+.top-header__overlay {
+  display: none;
+  @include overlay(rgba($black, 0.3));
+}
+
+.main {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: $main-width;
+  margin: 0 auto;
+}
+
+.player-is-open .page-content__sidebar,
+.player-is-open .page-content__main {
+  height: calc(#{100vh} - #{$player-height-small} - #{$header-height});
+  @include tablet {
+    height: calc(#{100vh} - #{$player-height} - #{$header-height});
+  }
+  @include laptop {
+    height: calc(#{100vh} - #{$player-height});
+  }
+  @include desktop {
+    height: calc(#{100vh} - #{$player-height-desktop});
+  }
+}
+
+.nav-is-open .page-content__sidebar {
+  left: 0;
+}
+
+.nav-is-open .top-header__overlay {
+  display: block;
+  @include laptop {
+    display: none;
+  }
+}
+
+.podcasts,
+.favorites,
+.in-progress,
+.new-releases {
+  padding: $small-space;
+}
+
+.new-releases__content,
+.in-progress__content,
+.favorites__content,
+.podcasts__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 3rem;
+  text-align: center;
+  @include tablet {
+    padding-top: 10rem;
+  }
+  @include desktop {
+    font-size: 1.8rem;
+  }
+  h2 {
+    margin-bottom: $small-space;
+    @include desktop {
+      font-size: 2.2rem;
+    }
+  }
+  a {
+    color: $light-blue;
+  }
+}
+
+.podcasts__cards {
+  width: 100%;
+}
+
+.podcasts__card {
+  display: inline-block;
+  width: 50%;
+  transition: all 0.3s ease;
+  @include phone-large {
+    width: 33%;
+  }
+  @include tablet {
+    width: 25%;
+  }
+  @include laptop {
+    width: 20%;
+  }
+}
+
+.podcasts__image {
+  width: 100%;
+  height: auto;
+  @include tablet {
+    padding: $small-space;
+  }
+}
+
+.podcasts__card:hover {
+  @include laptop {
+    transform: scale(1.05);
+  }
+}
+
+.footer {
+  padding: $space;
+  text-align: center;
+}
+
+.footer__text {
+  color: $black;
+  font-size: 1.4rem;
+  font-weight: 500;
+  @include desktop {
+    font-size: 1.6rem;
+  }
+}
+
+.footer__link {
+  &:hover {
+    text-decoration: underline;
+    color: $light-blue;
+  }
+}

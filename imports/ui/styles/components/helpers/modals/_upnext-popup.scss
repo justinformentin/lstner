@@ -1,0 +1,48 @@
+.up-next__popup {
+  @include modal;
+  bottom: calc(#{$player-height-small} - #{$small-space});
+
+  border: 0.1rem solid $black;
+  box-shadow: 0 0 0.1rem 0 rgba($black, 0.3), 0 1rem 1.5rem rgba($black, 0.2);
+
+  height: 35rem;
+  width: 100%;
+
+  @include phone-large {
+    width: 42rem;
+    right: 0;
+  }
+
+  @include tablet {
+    height: 40rem;
+    width: 50rem;
+    right: $large-space;
+    bottom: calc(#{$player-height} - #{$large-space});
+  }
+}
+
+.up-next__popup-overlay {
+  @include overlay($upnext-overlay-background);
+}
+
+.up-next__popup .modal__header {
+  padding: $small-space $space;
+}
+
+.up-next__popup .modal__close {
+  top: $small-space;
+  right: $space;
+}
+
+.up-next__empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.empty__text {
+  font-size: 1.7rem;
+  font-style: italic;
+}

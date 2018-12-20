@@ -1,0 +1,45 @@
+.warning-modal,
+.unsubscribe-modal {
+  @include modal;
+  padding: $small-space;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.unsubscribe-modal__overlay,
+.warning-modal__overlay {
+  @include overlay($modal-overlay-background);
+}
+
+.unsubscribe-modal .warning .modal__list {
+  overflow-y: auto;
+  width: 100%;
+  flex: 1;
+}
+
+.unsubscribe-modal__header,
+.warning-modal__header {
+  font-size: 1.8rem;
+  @include tablet {
+    font-size: 2.2rem;
+  }
+}
+.warning-modal__text {
+  font-size: 1.2rem;
+  margin-top: $small-space / 2;
+  @include tablet {
+    font-size: 1.6rem;
+  }
+}
+.unsubscribe-modal {
+  align-items: center;
+}
+.unsubscribe-modal__controls {
+  margin-top: $small-space;
+  padding: 0 $small-space;
+}
+.unsubscribe-modal__controls .button + .button {
+  margin-left: $space;
+}

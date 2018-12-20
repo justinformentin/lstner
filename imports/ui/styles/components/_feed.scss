@@ -1,0 +1,22 @@
+.feed {
+  margin-top: $small-space;
+}
+
+.feed__header {
+  display: flex;
+  padding: $small-space 0;
+  font-size: 1.5rem;
+  border-bottom: 0.1rem solid $dark-gray;
+
+  @include desktop {
+    font-size: 1.8rem;
+  }
+}
+
+.feed + button {
+  margin-top: $small-space;
+
+  @include tablet {
+    margin-top: $space;
+  }
+}

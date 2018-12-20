@@ -1,0 +1,15 @@
+@mixin noselect {
+  //https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

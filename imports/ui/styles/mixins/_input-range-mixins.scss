@@ -1,0 +1,30 @@
+@mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
+  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color,
+    0 0 $shadow-size lighten($shadow-color, 5%);
+}
+
+@mixin track {
+  cursor: pointer;
+  height: $track-height;
+  transition: all 0.2s ease;
+  width: $track-width;
+
+  @include desktop {
+    height: $track-height-desktop;
+  }
+}
+
+@mixin thumb {
+  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+  background: $thumb-color;
+  border: $thumb-border-width solid $thumb-border-color;
+  border-radius: $thumb-radius;
+  cursor: pointer;
+  height: $thumb-height;
+  width: $thumb-width;
+
+  @include desktop {
+    height: $thumb-height-desktop;
+    width: $thumb-width-desktop;
+  }
+}

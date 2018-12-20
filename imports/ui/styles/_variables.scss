@@ -1,0 +1,128 @@
+//Colors
+$dark-blue: #181b33;
+$medium-blue: #004077;
+$light-blue: #77d0ff;
+$dark-gray: #626262;
+$light-gray: #c0c0c0;
+$white: #fafafa;
+$black: #333;
+$red: #d0021b;
+$light-red: #e4393f;
+$yellow: #e6e642;
+
+//Gradient
+$sidebar-gradient: linear-gradient(147deg, rgb(2, 1, 27) 0%, rgb(18, 18, 59) 50%, rgba(0,43,84,1) 78%, rgba(0,64,119,1) 100%);
+
+//Body
+$body-background-color: $white;
+$body-default-color: $black;
+$body-default-font-family: Helvetica, Arial, sans-serif;
+
+//Media breakpoints
+$breakpoint-phone-large: 425px;
+$breakpoint-tablet-small: 600px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+$breakpoint-desktop: 1441px;
+
+//Base64 svg
+$close-icon-svg: url(data:image/svg+xml;base64,IDxzdmcgZmlsbD0iIzMzMyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTkyLjMzIDE5Mi4zMyI+ICAgICAgPHBhdGggZD0iTTk2LjE3IDEyNi41N2wtNjUuMDYgNjUuMDYtMzAuNC0zMC40MSA2NS4wNS02NS4wNUwuNzEgMzEuMTEgMzEuMTEuNzFsNjUuMDYgNjUuMDVMMTYxLjIyLjcxbDMwLjQxIDMwLjQtNjUuMDYgNjUuMDYgNjUuMDYgNjUuMDUtMzAuNDEgMzAuNDEtNjUuMDUtNjUuMDZ6IiAvPiAgICAgIDxwYXRoIGQ9Ik0xNjEuMjIgMS40MWwyOS43IDI5LjctNjQuMzUgNjQuMzUtLjcuNzEuNy43IDY0LjM1IDY0LjM1LTI5LjcgMjkuNy02NC4zNS02NC4zNS0uNy0uNy0uNzEuNy02NC4zNSA2NC4zNS0yOS43LTI5LjcgNjQuMzUtNjQuMzUuNzEtLjctLjcxLS43MUwxLjQxIDMxLjExbDI5LjctMjkuNyA2NC4zNSA2NC4zNS43MS43MS43LS43MSA2NC4zNS02NC4zNW0wLTEuNDFsLTY1IDY1LjA1TDMxLjExIDAgMCAzMS4xMWw2NS4wNSA2NS4wNkwwIDE2MS4yMmwzMS4xMSAzMS4xMSA2NS4wNi02NS4wNSA2NS4wNSA2NS4wNSAzMS4xMS0zMS4xMS02NS4wNS02NSA2NS4wNS02NS4wNkwxNjEuMjIgMHoiIC8+ICAgIDwvc3ZnPg==);
+
+// Baloo Google Font
+$baloo: url(https://fonts.googleapis.com/css?family=Baloo);
+
+//Spacing
+$small-space: 1rem;
+$space: 2rem;
+$large-space: 3rem;
+$site-width: 100%;
+
+//Font sizes
+$base-font-size: 1.4rem;
+
+//Page Content
+$page-content-sidebar-width: 24rem;
+$page-content-sidebar-width-desktop: 30rem;
+$page-content-main-width: calc(#{$site-width} - #{$page-content-sidebar-width});
+$page-content-main-width-desktop: calc(
+  #{$site-width} - #{$page-content-sidebar-width-desktop}
+);
+$main-width: 120rem;
+// Header
+$header-height: 5rem;
+$header-nav-toogle: 3rem;
+// Button
+$button-bg: $light-blue;
+$button-color: $white;
+$button-shadow-color: rgba($black, 0.2);
+$button-spacing: $small-space;
+// Sidebar
+$sidebar-bg: $dark-blue;
+$sidebar-color: $white;
+$sidebar-color-active: $light-blue;
+$sidebar-font-size: 1.75rem;
+// Preview
+$preview-title-font-size: 2.5rem;
+$preview-desc-font-size: 1.6rem;
+// Inner header
+$title-font-size: 3.5rem;
+$ih-arrow-size: 2.5rem;
+$ih-arrow-wiggle: 1rem;
+// Genre
+$genre-spacing: 0.5rem;
+$genre-nav-height: 70rem;
+$genre-title-font-size: 1.6rem;
+// Podcast
+$podcast-image-size: 22rem;
+$podcast-title: 3.5rem;
+// Player
+$player-height: 9rem;
+$player-height-small: 6rem;
+$player-height-desktop: 12rem;
+$player-title-font-size: 1.6rem;
+$player-skip-size: 4rem;
+$player-skip-size-desktop: 6rem;
+$player-play-size: 5rem;
+$player-play-size-desktop: 8rem;
+$player-artwork-size: 7rem;
+$player-artwork-size-desktop: 9rem;
+$player-playback-size: 2rem;
+$player-playback-size-laptop: 2.5rem;
+$player-playback-size-desktop: 3rem;
+$player-volume-height: 3rem;
+$player-volume-width: 4rem;
+$player-volume-height-desktop: 4rem;
+$player-volume-width-desktop: 5rem;
+$player-upnext-height: 3rem;
+$player-upnext-width: 2.5rem;
+$player-upnext-height-laptop: 3.5rem;
+$player-upnext-width-laptop: 3rem;
+$player-upnext-height-desktop: 4.5rem;
+$player-upnext-width-desktop: 4rem;
+// Input range
+$track-color: #fff;
+$thumb-color: $white;
+$thumb-radius: 2rem;
+$thumb-height: 2rem;
+$thumb-width: 1rem;
+$thumb-height-desktop: 3rem;
+$thumb-width-desktop: 1.5rem;
+$thumb-shadow-size: 0.5rem;
+$thumb-shadow-blur: 0.5rem;
+$thumb-shadow-color: rgba(0, 0, 0, 0.2);
+$thumb-border-width: 0.2rem;
+$thumb-border-color: $dark-gray;
+$track-width: 100%;
+$track-height: 0.5rem;
+$track-height-desktop: 1rem;
+$track-shadow-size: 0.1rem;
+$track-shadow-blur: 0.1rem;
+$track-shadow-color: rgba(0, 0, 0, 0.2);
+$track-border-width: 0.1rem;
+$track-border-color: $dark-gray;
+$track-radius: 0.5rem;
+$contrast: 5%;
+// Modals
+$modal-background: $white;
+$modal-overlay-background: rgba($black, 0.3);
+$upnext-overlay-background: rgba($black, 0.1);

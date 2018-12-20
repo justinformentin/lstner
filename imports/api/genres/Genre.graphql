@@ -1,0 +1,9 @@
+type Genre @cacheControl(maxAge: 86400) {
+  id: String!
+  name: String!
+  subgenres: [Genre]
+}
+
+type Query {
+  genres: [Genre]
+}

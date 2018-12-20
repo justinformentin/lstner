@@ -1,0 +1,10 @@
+type PodcastPreview @cacheControl(maxAge: 3600) {
+  id: Int!
+  title: String!
+  artwork: String!
+  summary: String
+}
+
+extend type Query {
+  podcastsPreviews(genreId: Int!): [PodcastPreview]
+}

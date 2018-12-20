@@ -1,0 +1,90 @@
+.preview-list {
+  display: block;
+}
+
+.preview-list + button {
+  margin-top: $small-space;
+
+  @include tablet {
+    margin-top: $space;
+  }
+}
+
+.preview {
+  display: inline-block;
+  width: 50%;
+  transition: all 0.3s ease;
+
+  @include phone-large {
+    width: 33%;
+  }
+
+  @include tablet-small {
+    width: 25%;
+  }
+
+  @include tablet {
+    border: 0.2rem solid transparent;
+    margin: $small-space 0;
+    width: 100%;
+    height: 17rem;
+  }
+}
+
+.preview:hover {
+  @include laptop {
+    border-color: $light-blue;
+    transform: scale(1.02);
+  }
+}
+
+.preview__link {
+  @include tablet {
+    display: flex;
+    height: 100%;
+  }
+}
+
+.preview__image {
+  height: auto;
+  width: 100%;
+  border: none;
+
+  @include tablet {
+    width: auto;
+  }
+}
+
+.preview__info {
+  display: none;
+
+  @include tablet {
+    display: block;
+    margin: $small-space $space;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1 1;
+  }
+}
+
+.preview__title {
+  font-size: $preview-title-font-size;
+  line-height: 1.2;
+  margin-bottom: $small-space;
+
+  @include desktop {
+    font-size: $preview-title-font-size * 1.2;
+  }
+
+  @include text-overflow;
+}
+
+.preview__description {
+  width: 100%;
+  font-size: $preview-desc-font-size;
+  line-height: 1.4;
+
+  @include desktop {
+    font-size: $preview-desc-font-size * 1.2;
+  }
+}

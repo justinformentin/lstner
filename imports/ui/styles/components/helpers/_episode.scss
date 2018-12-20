@@ -1,0 +1,300 @@
+.episode {
+  display: flex;
+  border-bottom: 0.1rem solid $dark-gray;
+  width: 100%;
+  height: 5rem;
+  transition: all 0.2s ease;
+  align-items: center;
+
+  @include tablet {
+    height: 7rem;
+  }
+
+  @include desktop {
+    height: 9rem;
+  }
+}
+
+.episode--played.episode {
+  color: $light-gray;
+}
+
+.episode:hover .title__text {
+  color: $light-blue;
+}
+.episode:hover .controls__status-icon,
+.episode:hover .controls__up-next,
+.episode:hover .star__icon {
+  @include laptop {
+    display: block;
+  }
+}
+
+.episode__artwork {
+  display: none;
+
+  @include tablet {
+    display: block;
+    margin-right: $small-space;
+    flex-shrink: 0;
+    height: 6rem;
+    width: 6rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: center;
+  }
+
+  @include desktop {
+    height: 8rem;
+    width: 8rem;
+  }
+}
+
+.episode__info {
+  flex: 1 1;
+  overflow: hidden;
+
+  padding-right: $small-space;
+  cursor: pointer;
+  position: relative;
+}
+
+.episode__primary {
+  // display: flex;
+}
+
+.episode__title {
+  display: flex;
+  align-items: center;
+
+  @include text-overflow;
+}
+
+.title__text {
+  font-weight: 500;
+
+  flex: 0 1 auto;
+
+  @include tablet {
+    font-size: 1.4rem;
+  }
+
+  @include laptop {
+    font-size: 1.6rem;
+  }
+
+  @include desktop {
+    font-size: 1.8rem;
+  }
+
+  @include text-overflow;
+}
+
+.episode__author {
+  display: block;
+  font-style: italic;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include tablet {
+    font-size: 1.3rem;
+  }
+
+  @include laptop {
+    font-size: 1.4rem;
+  }
+
+  @include desktop {
+    font-size: 1.5rem;
+  }
+
+  @include text-overflow;
+}
+
+.episode__author a {
+  color: inherit;
+}
+
+.star__icon {
+  fill: $dark-gray;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 auto;
+  margin: 0 0 0.2rem 0.5rem;
+
+  @include laptop {
+    display: none;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  @include desktop {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.episode__pub-date,
+.episode__duration {
+  display: none;
+
+  @include tablet {
+    text-align: center;
+    display: block;
+  }
+
+  @include laptop {
+    font-size: 1.6rem;
+  }
+
+  @include desktop {
+    font-size: 1.8rem;
+  }
+}
+
+.episode__pub-date {
+  @include tablet {
+    flex: 0 0 12rem;
+  }
+
+  @include desktop {
+    flex-basis: 14rem;
+  }
+}
+
+.episode__duration {
+  @include tablet {
+    flex: 0 0 7rem;
+  }
+
+  @include desktop {
+    flex-basis: 9rem;
+  }
+}
+
+.episode__controls {
+  display: flex;
+  align-items: center;
+  flex: 0 0 3rem;
+  justify-content: flex-end;
+
+  @include tablet-small {
+    flex-basis: 12rem;
+    padding: 0 $small-space;
+  }
+
+  @include desktop {
+    flex-basis: 15rem;
+    padding: 0 $small-space;
+  }
+}
+
+.controls__play {
+  fill: $light-blue;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+
+  @include desktop {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.controls__up-next,
+.controls__status-icon {
+  fill: $dark-gray;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: $small-space;
+  cursor: pointer;
+
+  @include desktop {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+.controls__up-next,
+.controls__status-icon {
+  display: none;
+
+  @include tablet-small {
+    display: block;
+  }
+
+  @include laptop {
+    display: none;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.controls__play:hover {
+  transform: scale(1.2);
+}
+
+.play__circle {
+  fill: $white;
+}
+
+.controls__play:hover .play__circle {
+  fill: $light-blue;
+}
+
+.controls__play:hover .play__triangle,
+.controls__play:hover .play__bars {
+  fill: $white;
+}
+
+.play__bars {
+  opacity: 0;
+}
+
+.episode--playing .play__bars {
+  opacity: 1;
+}
+
+.episode--playing .play__triangle {
+  opacity: 0;
+}
+
+.up-next__add,
+.status-icon__unplayed {
+  opacity: 1;
+}
+
+.up-next__remove,
+.status-icon__played {
+  opacity: 0;
+}
+
+.episode--in-upnext .up-next__add {
+  opacity: 0;
+}
+
+.episode--in-upnext .up-next__remove {
+  opacity: 1;
+}
+
+.episode--in-favorites .star__icon {
+  display: block;
+  opacity: 1;
+  fill: $yellow;
+}
+
+.episode--played .status-icon__unplayed {
+  opacity: 0;
+}
+
+.episode--played .status-icon__played {
+  opacity: 1;
+}
