@@ -8,7 +8,7 @@
   </a>
   <a href="https://codeclimate.com/github/justinformentin/lstner">
     <img
-      src="https://codeclimate.com/github/justinformentin/lstnerr/badges/gpa.svg"
+      src="https://codeclimate.com/github/justinformentin/lstner/badges/gpa.svg"
       alt="Maintainability"
     />
   </a>
