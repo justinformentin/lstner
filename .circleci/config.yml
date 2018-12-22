@@ -19,12 +19,32 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          key: build-temp-{{ checksum ".meteor/release" }}-{{ checksum ".circleci/config.yml" }}
+      - restore_cache:
+          key: meteor-release-{{ checksum ".meteor/release" }}-{{ checksum ".circleci/config.yml" }}
+      - restore_cache:
+          key: meteor-packages-{{ checksum ".meteor/versions" }}-{{ checksum ".circleci/config.yml" }}
+      - restore_cache:
+          key: npm-packages-{{ checksum "package.json" }}-{{ checksum ".circleci/config.yml" }}
+      - run:
+          name: install build essentials
+          command: sudo apt-get install -y build-essential
+      - run:
+          name: restore cached meteor bin
+          command: |
+            if [ -e ~/build-temp/meteor-bin ]
+            then
+                echo "Cached Meteor bin found, restoring it"
+                sudo cp ~/build-temp/meteor-bin /usr/local/bin/meteor
+            else
+                echo "No cached Meteor bin found."
+            fi
+      - run:
+          name: install Meteor
+          command: |
+            # only install meteor if bin isn't found
+            command -v meteor >/dev/null 2>&1 || curl https://install.meteor.com | /bin/sh
 
       - run: meteor npm install
 
