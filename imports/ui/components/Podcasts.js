@@ -41,7 +41,7 @@ function renderPodcasts(props) {
   if (!podcasts || !podcasts.length) {
     return (
       <div className="podcasts__content">
-        <h2>Oh no! It's empty!</h2>
+        <h2>Oh no! It&#8217;s empty!</h2>
         <div>
           Head to <Link to="/discover">Discover section</Link>, to find
           something you interested in.

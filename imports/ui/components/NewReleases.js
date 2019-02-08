@@ -46,7 +46,7 @@ function renderNewReleases(props) {
       <div className="new-releases__content">
         <h2>All caught up!.</h2>
         <div>
-          It's time to subscribe to some{" "}
+          It&#8217;s time to subscribe to some{" "}
           <Link to="/discover">more podcasts</Link>.
         </div>
       </div>

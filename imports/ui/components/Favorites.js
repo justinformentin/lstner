@@ -42,7 +42,7 @@ function renderFavorites(props) {
     return (
       <div className="favorites__content">
         <h2>No favorites episodes available.</h2>
-        <div>It's time to find some new favourites.</div>
+        <div>It&#8217;s time to find some new favourites.</div>
       </div>
     );
   }

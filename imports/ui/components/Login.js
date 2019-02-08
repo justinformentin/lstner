@@ -76,7 +76,7 @@ export class Login extends Component {
           className="auth-modal__text-btn"
           onClick={() => this.props.onSwap()}
         >
-          Don't have an account?
+          Don&#8217;t have an account?
         </button>
       </React.Fragment>
     );
